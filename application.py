@@ -9,7 +9,6 @@ from commons import data_mfcc
 from commons import predict_func
 from commons import model_load_compile
 from commons import arrange_predictions
-from commons import list
 
 application = Flask(__name__)
 
@@ -24,8 +23,6 @@ def index():
 @application.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        #The Request object
-        #http://flask.pocoo.org/docs/1.0/api/#flask.Request
         if 'file' not in request.files:
             application.logger.debug("[server] no file part")
             return '[server] no file part'
