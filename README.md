@@ -6,7 +6,7 @@ How to deploy a voice sentiment prediction model with docker, flask, keras and A
 This is an example of deploying a multi-class classification keras model with Docker, Flask and AWS elastic beanstalk. It will cover basically the main project structure: Docker, Flask and recorder, since for AWS side you need to check their steps (for creating a new application and docker environment + and after just archive/compress the project folder contents and upload on beanstalk). Data sets used, transforms(mfccs/librosa) and keras model built(CNN1 & CNN2): hopefully will come soon on one of my blogs.
 
 <p>
-    <img src="docs/2.png" width="220" height="240" />
+    <img src="/docs/2.png" width="220" height="240" />
 </p>
 
 I have uploaded above the whole project so you can give it a try/run and change where you find appropiate for your own project:
