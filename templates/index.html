@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Machine Learning for Voice</title>
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <div class="image">
+        <div class="text">
+        <hr>
+        <!-- Heading -->
+        <h1>Voice Sentiment Prediction</h1>
+        <br>
+        <!-- Paragraph -->
+        <h3 style="color: purple">Predicting your voice sentiment and gender.</h3>
+          <br>
+          <p> Feel free to use simple sentences as:
+          "This coffee is good/bad/unexceptable/wow.!?!"
+          ..depending on the mood you want to convey.</p>
+        <br>
+
+        <div id="controls">
+            <input class='button' type=submit id="recordButton" value="Record" style="margin-left: auto;
+            margin-right: auto; padding: 6px 10px 10px 6px;"></button>
+            <button class='button' type=submit id="stopButton" disabled>Stop</button>
+        </div>
+
+        <h5> Recordings are less than 4 seconds. Please speak right after you press record.</h5>
+        <br>
+        <div id="capable"></div>
+  	       <ol id="recordingsList"></ol>
+          <br>
+        <p> Feel free to click when record ready:
+        <div class="container" style="margin-left: auto;
+        margin-right: auto;">
+           <form action="/predict" method="post">
+             <input type="submit" value="Predict" style="margin-left: auto;
+             margin-right: auto; padding: 6px 10px 10px 6px;">
+           </form>
+        </div>
+        <div class="message">
+            <h3>{{message}}</h3>
+        </div>
+
+        <!-- Messages <div class="message">
+        {% if message %}
+        <p>{{ message | safe }}</p>
+        {% endif %}
+        </div>
+        <br>
+        <script type="text/javascript" src="{{ url_for('static', filename='scripts/recorder.js') }}"></script>
+
+      -->
+
+        <script src="{{ url_for('static', filename='scripts/jquery-3.3.1.js') }}"> </script>
+
+        <script type="text/javascript" src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='scripts/recapp.js') }}"></script>
+
+        </div>
+        </div>
+    </body>
+</html>
+
+<!--
+-->
