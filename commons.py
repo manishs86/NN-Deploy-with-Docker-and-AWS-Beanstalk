@@ -4,8 +4,7 @@ import re
 import keras
 import pickle
 import librosa
-from keras.models import Sequential, Model, load_model
-from glob import glob
+from keras.models import load_model
 
 def model_load_compile():
     with open('./labels', 'rb') as f:
