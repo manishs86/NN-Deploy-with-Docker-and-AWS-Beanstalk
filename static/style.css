@@ -1,0 +1,48 @@
+body {
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+}
+.message {
+color: purple;
+}
+.image {
+background-image: linear-gradient(rgba(0, 0, 0, 0.3),
+                    rgba(0, 0, 0, 0.3)), url("robo18.jpg");
+background-color: #cccccc;
+height: 1200px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+
+.text {
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+}
+
+input[type=submit] {
+  width: 100%;
+padding: 6px 10px 10px 6px;
+margin: 8px 0px 8px 20px;
+display: block;
+width: 200px;
+font-size: 1.5em;
+color: white;
+justify-content: center;
+align-items: flex-start;
+align-items: center;
+text-align: center;
+box-sizing: border-box;
+background-color: #DC143C;
+border-radius: 4px;
+}
+
+input[type=submit]:hover {
+  background:pink;
+  color:#fff;
+}
