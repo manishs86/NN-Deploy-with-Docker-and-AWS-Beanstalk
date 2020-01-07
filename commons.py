@@ -7,17 +7,6 @@ import librosa
 from keras.models import Sequential, Model, load_model
 from glob import glob
 
-def list():
-    list = glob('./uploads/*.wav')
-    print(f"This is the initial: \n{list}")
-    item = list[-1]
-    print(f"This is the last -1 item:\n {item}")
-    list.sort()
-    print(f"This is the sorted list:\n {list}")
-    item2 = list[-1]
-    print(f"This is the last -1 item2:\n {item2}")
-    return item2
-
 def model_load_compile():
     with open('./labels', 'rb') as f:
         lb = pickle.load(f)
@@ -25,7 +14,8 @@ def model_load_compile():
 
     # loading keras model (arhitecture, weights and compiler)
     model = load_model('./my_sentimental_model.h5')
-    model._make_predict_function() #keras is not thread safe: keras_model._make_predict_function()
+    model._make_predict_function() #keras is not thread safe: keras_model._make_predict_function() check my StackOverflow on it:
+    # https://stackoverflow.com/questions/53391618/tensor-tensorpredictions-softmax0-shape-1000-dtype-float32-is-not-an/59238039#59238039
     print('model loaded')
     return model, lb
 
@@ -54,7 +44,7 @@ def predict_func(model, lb, newdf):
     final = newpred.argmax(axis=1)
     final = final.astype(int).flatten()
     prediction_result = (lb.inverse_transform((final)))
-    print(prediction_result) #emo(final) #gender(final) ['female_surprise']
+    print(prediction_result) 
 
     return prediction_result
 
