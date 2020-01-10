@@ -1,0 +1,10 @@
+.env
+.editorconfig
+.git
+.github
+.cache
+*.md
+.DS_Store
+LICENSE
+Makefile
+vendor/
